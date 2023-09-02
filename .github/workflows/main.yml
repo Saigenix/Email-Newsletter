@@ -20,7 +20,8 @@ jobs:
             touch .env
             echo  PASS=${{ secrets.PASS }} >> .env
             echo  EMAIL=${{ secrets.EMAIL }} >> .env
-      - run: ls
+      - run: ls -a
+      - run: cat .env
       - run: npm ci
         env:
           PASS: ${{ secrets.PASS }}
