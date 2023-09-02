@@ -16,5 +16,8 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
+        env:
+          PASS: ${{ secrets.PASS }}
+          EMAIL: ${{ secrets.EMAIL }}
       - run: npm run made
 
