@@ -20,9 +20,11 @@ jobs:
             touch .env
             echo  PASS=${{ secrets.PASS }} >> .env
             echo  EMAIL=${{ secrets.EMAIL }} >> .env
+            echo  GOOGLE_APPLICATION_CREDENTIALS=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }} >> .env
       - run: npm ci
         env:
           PASS: ${{ secrets.PASS }}
           EMAIL: ${{ secrets.EMAIL }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
       - run: npm run made
 
