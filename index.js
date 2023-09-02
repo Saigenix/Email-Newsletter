@@ -4,8 +4,9 @@ require("dotenv").config();
 const nodemailer = require("nodemailer");
 const showdown = require("showdown");
 const fs = require("fs");
-const { EmailList } = require("./emails");
-// console.log(EmailList)
+const  emails = require("./emails");
+
+var EmailList = undefined;
 var htm = undefined;
 
 const HtmlToMark = (content) => {
@@ -58,11 +59,13 @@ const transporter = nodemailer.createTransport({
 
 async function main(data) {
   console.log("Sending Mail...");
+  EmailList = await emails.getData()
+  console.log(EmailList)
   EmailList.forEach(async (val) => {
     const info = await transporter.sendMail({
       from: "Saigenix", // sender address
       to: val.email, // list of receivers
-      subject: `Hello ${val.name}`, // plain text body
+      subject: `Hello ${val.name}!`, // plain text body
       html: data, // html body
     });
 

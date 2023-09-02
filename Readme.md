@@ -1,6 +1,6 @@
 # Free Email Newsletter
 ------------------------------------------------
-> using NodeJs and github Workflows
+> using NodeJs and github Workflows,firebase
 
 
 
