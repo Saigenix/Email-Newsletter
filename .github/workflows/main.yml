@@ -19,8 +19,8 @@ jobs:
       - name: create env file
         run: |
             touch .env
-            echo  PASS=${{ Secrets.PASS }} >> .env
-            echo  EMAIL=${{ Secrets.EMAIL }} >> .env
+            echo  PASS=${{ secrets.PASS }} >> .env
+            echo  EMAIL=${{ secrets.EMAIL }} >> .env
       - run: ls -a
       - run: cat .env
       - run: npm ci
