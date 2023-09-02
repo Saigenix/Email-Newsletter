@@ -15,7 +15,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: echo ${{secrets.PASS}}
       - name: create env file
         run: |
             touch .env
