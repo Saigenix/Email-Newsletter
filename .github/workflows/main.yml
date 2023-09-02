@@ -15,6 +15,16 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: create env file
+        run: |
+            touch .env
+            echo  PASS=${{ secrets.PASS }} >> .env
+            echo  EMAIL=${{ secrets.EMAIL }} >> .env
+      - run: ls -a
+      - run: cat .env
       - run: npm ci
+        env:
+          PASS: ${{ secrets.PASS }}
+          EMAIL: ${{ secrets.EMAIL }}
       - run: npm run made
 
