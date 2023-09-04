@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Ubuntu', sans-serif;
+ }
+ 
+ 
+ body{
+   
+   box-sizing: border-box;
+   background-color: #1a1a1d;
+   /* background-image: 
+       radial-gradient(at 47% 33%, hsl(118.53, 98%, 41%) 0, transparent 59%), 
+       radial-gradient(at 82% 65%, hsl(289.00, 62%, 36%) 0, transparent 55%); */
+
+  }
+
+
+form {
+  backdrop-filter: blur(21px) saturate(200%);
+  -webkit-backdrop-filter: blur(21px) saturate(200%);
+  background-color: rgba(111, 34, 50, 0.87);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+  
+  /* Adding Padding to Containers */
+  .container 
+  {
+    padding: 15px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #6cf49e; */
+    
+
+}
+  
+  /* Styling for input elements and the Submit Button */
+  input[type=text], input[type=submit] 
+  {
+    width: 100%;
+    padding: 15px;
+    color: #c3073f;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #4e4e50;
+    box-sizing: border-box;
+    width: 50vh;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  input[type=email], input[type=submit] 
+  {
+    width: 100%;
+    padding: 15px;
+    color: #c3073f;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #4e4e50;
+    box-sizing: border-box;
+    width: 50vh;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  input[type=submit] 
+  {
+    background-color: #c3073f;
+    color: white;
+    border: none;
+    width: 30vh;
+    font-size: 20px;
+  }
+  
+  input[type=submit]:hover 
+  {
+    opacity: 1;
+  }
+
+ .text{
+  color:white;
+  padding: 15px;
+ }
+.msg{
+  color:rgb(0, 255, 68);
+  padding: 30px;
+  font-size: 25px;
+  display: none;
+}
+.load{
+  color:rgb(0, 255, 68);
+  padding: 30px;
+  font-size: 25px;
+  display: none;
+}
+ .parent{
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+   /* background: rgb(255, 105, 105); */
+   /* background: linear-gradient(90deg, rgba(255, 105, 105, 1) 0%, rgba(249, 245, 39, 1) 0%, rgba(251, 255, 72, 1) 100%); */
+ 
+   
+   /* width: 100vw;
+   height: 100vh; */
+   /* display: grid;
+  place-items: center; */
+ }
+ 
+ 
+ .button {
+  background-color: #FF0000;
+  color: white;
+  border: none;
+  padding: 5px 5px;
+  margin: 20px 70px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+ 
+  cursor: pointer;
+  font-family: 'Ubuntu', sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.loading-spinner{
+  
+  width:30px;
+  height:30px;
+  border:2px solid indigo;
+  border-radius:50%;
+  border-top-color:#0001;
+  /* display:inline-block; */
+  display: none;
+  animation:loadingspinner .7s linear infinite;
+  z-index: 10;
+}
+@keyframes loadingspinner{
+  0%{
+    transform:rotate(0deg)
+  }
+  100%{
+    transform:rotate(360deg)
+  }
+}

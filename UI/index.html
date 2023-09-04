@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Opemic Newsletter</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles/style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="styles/NavStyle.css" type="text/css" media="all" />
+</head>
+<body>
+    <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+          <div class="nav-title">
+            Opemic Newsletter
+          </div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        
+        <div class="nav-links">
+          <a href="#" target="_blank">About us</a>
+          <a href="#" target="_blank">Contact us</a>
+          <a href="#" target="_blank">Privacy policy</a>
+          <a href="#" target="_blank">More tools</a>
+        </div>
+      </div>
+      
+    <div class="parent">
+            <form onsubmit="return false;" method="post" name="myForm">
+                <div class="container">
+                  <h2>Subscribe Now!</h2>
+                </div>
+              
+                <div class="container" >
+                  <input type="text" placeholder="Name" id="name" name="name" required>
+                  <input type="email" placeholder="Address" id="email" name="mail" required>
+                </div>
+                <div class="container">
+                  <input type="submit" value="Subscribe!" onclick="validate()">
+                </div>
+                <center>
+                    <p class="text"> All © reserved 2021 <br/> Made by saigenix</p>
+                  </center>
+              </form>
+              <center>
+                <p class="msg" id="msd"> Thank you For Subscribing!</p>
+                <div class="loading-spinner mb-2 load" id="ld"></div>
+               <div class="load" id="ldtxt">Loading...</div>
+            </div>
+              </center>
+      </div> 
+      
+</body>
+<script type="text/javascript" charset="utf-8">
+    let txt = document.getElementById("msd");
+    let ld = document.getElementById("ld");
+    let ldtxt = document.getElementById("ldtxt");
+
+    async function validate(){
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        if(name && email){
+            console.log(name,email)
+            fetch('https://next-api-saigenix.vercel.app/firebase/email/add', {
+    method: 'POST',
+    headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ "name":name,"email":email })
+})
+   .then(response => response.json())
+   .then(response => {
+       console.log(JSON.stringify(response))
+       txt.style.display="block"
+       ld.style.display="inline-block"
+       ldtxt.style.display="block"
+       alert("Thankyou for subscribing " +name);
+   }).catch(e=>{
+    alert("Something went wrong " +name);
+   })
+        }
+    }
+  </script>
+</html>
