@@ -73,6 +73,7 @@ form {
     border: none;
     width: 30vh;
     font-size: 20px;
+    cursor: pointer;
   }
   
   input[type=submit]:hover 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Opemic Newsletter</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon.png">
   <link rel="stylesheet" href="styles/style.css" type="text/css" media="all" />
   <link rel="stylesheet" href="styles/NavStyle.css" type="text/css" media="all" />
 </head>
@@ -67,12 +67,13 @@
         var name = document.getElementById("name").value;
         var email = document.getElementById("email").value;
         if(name && email){
-            console.log(name,email)
+          ld.style.display="inline-block"
+          ldtxt.style.display="block"
+            // console.log(name,email)
             fetch('https://next-api-saigenix.vercel.app/firebase/email/add', {
     method: 'POST',
     headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Accept': 'application/json',
+        // 'Accept': 'application/json',
         'Content-Type': 'application/json'
     },
     body: JSON.stringify({ "name":name,"email":email })
@@ -80,14 +81,15 @@
    .then(response => response.json())
    .then(response => {
        console.log(JSON.stringify(response))
+       ld.style.display="none"
+       ldtxt.style.display="none"
        txt.style.display="block"
-       ld.style.display="inline-block"
-       ldtxt.style.display="block"
-       alert("Thankyou for subscribing " +name);
+       
+       alert("Thank you for subscribing " +name);
    }).catch(e=>{
     alert("Something went wrong " +name);
    })
-        }
+    }
     }
   </script>
 </html>
