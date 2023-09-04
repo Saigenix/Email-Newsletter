@@ -64,8 +64,10 @@
     let ldtxt = document.getElementById("ldtxt");
 
     async function validate(){
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
+        var nameobj = document.getElementById("name");
+        var emailobj = document.getElementById("email");
+        var name = nameobj.value;
+        var email = emailobj.value;
         if(name && email){
           ld.style.display="inline-block"
           ldtxt.style.display="block"
@@ -86,8 +88,12 @@
        txt.style.display="block"
        
        alert("Thank you for subscribing " +name);
+       nameobj.value=""
+       emailobj.value=""
    }).catch(e=>{
     alert("Something went wrong " +name);
+    nameobj.value=""
+    emailobj.value=""
    })
     }
     }

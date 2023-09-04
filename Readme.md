@@ -1,8 +1,11 @@
 
 # Free Email Newsletter
 
-GitHub Repository: https://github.com/Saigenix/Email-Newsletter
 
+[Subscribe Now!](https://saigenix.github.io/Email-Newsletter/)
+
+> UI Link : https://saigenix.github.io/Email-Newsletter/
+> 
 **Overview**
 The Free Email Newsletter project is a Node.js-based solution that automates the creation and distribution of email newsletters using GitHub Workflows and Firebase. It provides an efficient way to convert Markdown files into HTML emails and send them to subscribers listed in a Firebase Firestore database.
 
